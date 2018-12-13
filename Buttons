@@ -1,0 +1,15 @@
+def setup():
+    size(500,700)
+def draw():
+    background(0)
+    fill(255)
+    textSize(40)
+    text("Jumper", 180, 175)
+    textSize(18)
+    text("", 10, 70)
+    
+    rect(150,250,200,50)
+    
+    fill(0)
+    textSize(24)
+    text("How to Play", 150,300)
