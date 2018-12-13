@@ -3,7 +3,7 @@ def setup():
 def draw():
     background(0)
     fill(255)
-    textSize(26)
-    text("Jumper", 200, 175)
+    textSize(40)
+    text("Jumper", 180, 175)
     textSize(18)
     text("", 10, 70)
