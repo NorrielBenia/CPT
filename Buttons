@@ -1,15 +1,44 @@
+button_normal = 255
+button_hover = 200
 def setup():
     size(500,700)
 def draw():
-    background(0)
-    fill(255)
-    textSize(40)
-    text("Jumper", 180, 175)
-    textSize(18)
-    text("", 10, 70)
+    global button_hover, button_normal
+    screen = 0
     
-    rect(150,250,200,50)
+    if screen == 0:
+        background(145)
+        fill(button_normal)
+        button_x1 = 125
+        button_y1 = 300
+        button_width1 = 250
+        button_length1 = 100
+        noStroke()
+        if (mouseX > button_x1 and mouseX < button_x1+button_width1 and
+        mouseY > button_y1 and mouseY < button_y1+button_length1):
+            fill(button_hover)
+            if mousePressed:
+                screen = 1
+        else:
+            fill(button_normal)
+        rect(button_x1,button_y1,button_width1,button_length1)
+        fill(0)
+        textSize(50)
+        text("PLAY",190,370)
     
-    fill(0)
-    textSize(24)
-    text("How to Play", 150,300)
+        button_x2 = 147
+        button_y2 = 500
+        button_width2 = 200
+        button_length2 = 50
+        noStroke()
+        if (mouseX > button_x2 and mouseX < button_x2+button_width2 and
+        mouseY > button_y2 and mouseY < button_y2+button_length2):
+            fill(button_hover)
+            if mousePressed:
+                screen = 2
+        else:
+            fill(button_normal)
+        rect(button_x2, button_y2 , button_width2 , button_length2)
+        fill(0)
+        textSize(24)
+        text("How to Play", 182,535)
