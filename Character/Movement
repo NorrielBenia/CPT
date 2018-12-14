@@ -1,0 +1,29 @@
+def setup():
+    size(500,700)
+def draw():
+    background(255)
+    
+
+           
+    if keyPressed == True:
+        if key == 'w':
+            fill(255)
+
+    else:
+        fill(231)
+    rect(0, 0, 500, 700)  
+    
+    fill(255)
+    ellipse(height/3,width/2,80,60)
+    
+    
+    fill(0)
+    ellipse(height/2.78,width/2.1,20,20)
+    ellipse(height/3.25,width/2.1,20,20)
+    rect(height/3.43,width/1.95,60,13)
+
+
+
+
+
+
