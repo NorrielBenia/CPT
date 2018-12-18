@@ -1,29 +1,40 @@
+xCharacter = 0
+yCharacter = 0
 def setup():
     size(500,700)
 def draw():
-    background(255)
-    
-
-           
+    global xCharacter
+    global yCharacter
+    #MOVEMTN AND KEYS
     if keyPressed == True:
-        if key == 'w':
-            fill(255)
+        if key == 'w' and 'w' > 700:
+            yCharacter -= 4
 
+        if key == 's' and 's' > -700:
+            yCharacter += 4
+            
+        if key == 'a' and 'a' > 500:
+            xCharacter -= 4
+            
+        
+        if key == 'd'and 'a' > -500:
+            xCharacter += 4
+
+    
+    #ORIGINAL BACKGROUND
     else:
         fill(231)
-    rect(0, 0, 500, 700)  
+    rect(0, 0, 500, 700)      
     
+    #BODY
+    noStroke()
     fill(255)
-    ellipse(height/3,width/2,80,60)
+    ellipse(xCharacter + 250,yCharacter + 350,80,80)
     
-    
+    #FEATURES
     fill(0)
-    ellipse(height/2.78,width/2.1,20,20)
-    ellipse(height/3.25,width/2.1,20,20)
-    rect(height/3.43,width/1.95,60,13)
-
-
-
-
-
-
+    ellipse(xCharacter + 230.58,yCharacter + 340.1,20,20)
+    ellipse(xCharacter + 270.25,yCharacter + 340.1,20,20)
+   
+    fill("#FF8103")
+    rect(xCharacter + 250.43,yCharacter + 350.95,60,13)
