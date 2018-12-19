@@ -7,24 +7,23 @@ def draw():
     global yCharacter
     #MOVEMTN AND KEYS
     if keyPressed == True:
-        if key == 'w' and 'w' > 700:
+        if key == 'w':
             yCharacter -= 4
 
-        if key == 's' and 's' > -700:
+        if key == 's':
             yCharacter += 4
             
-        if key == 'a' and 'a' > 500:
+        if key == 'a':
             xCharacter -= 4
             
-        
-        if key == 'd'and 'a' > -500:
+      
+        if key == 'd':
             xCharacter += 4
 
     
     #ORIGINAL BACKGROUND
-    else:
-        fill(231)
-    rect(0, 0, 500, 700)      
+    
+    background("#D60618")  
     
     #BODY
     noStroke()
@@ -38,3 +37,21 @@ def draw():
    
     fill("#FF8103")
     rect(xCharacter + 250.43,yCharacter + 350.95,60,13)
+    
+    
+    
+    
+#DEAD
+    noStroke()
+    fill(255,0,0)
+    ellipse(xCharacter + 470,yCharacter + 350,80,80)
+    
+    #FEATURES
+    fill(0)
+    rect(xCharacter + 450.58,yCharacter + 340.1,20,20)
+    rect(xCharacter + 490.25,yCharacter + 340.1,20,20)
+   
+    fill("#FF8103")
+    rect(xCharacter + 470.43,yCharacter + 350.95,60,13)
+    
+    
