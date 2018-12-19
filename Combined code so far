@@ -94,12 +94,24 @@ def draw():
         fill(155)
         textSize(14)
         text("press b to go back to main menu",250,690)
+        textSize(40)
+        text("How to Play", CENTER + 135, 45)
+        textSize(30)
+        text("JUST SURVIVE", CENTER + 150, 110)
+        fill("#c7003c")
+        rect(50,185,125,20)
+        fill(155)
+        textSize(20)
+        text(""" These are walls you need to
+get through, go around them""", 200,188)
+        
+#Death screen
     if screen == 3:
         background(155)
         fill(0)
         textSize(85)
         text("""           Game Over
-             You Died""", -267, 180)
+             You Died""", -267, 145)
         textSize(20)
         text("press b to go back to main menu",CENTER+93,650)
         text("press r to play again", CENTER+155, 680)
