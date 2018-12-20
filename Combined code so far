@@ -103,8 +103,15 @@ def draw():
         fill(155)
         textSize(20)
         text(""" These are walls you need to
-get through, go around them""", 200,188)
-        
+get through, go around them""", 195,188)
+        text(""" These are spikes. They go up 
+ and continuoesly go faster. If 
+      touched, you will ... DIE""", 195,290)
+        noStroke()
+        fill("#d1dede")
+        triangle(65, 350, 87, 270, 111, 350)
+        triangle(90, 350, 115, 270, 136, 350)
+        triangle(95+20, 350, 120+22, 270, 141+20, 350)
 #Death screen
     if screen == 3:
         background(155)
