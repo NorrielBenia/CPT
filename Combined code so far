@@ -87,6 +87,14 @@ def draw():
         fill(155)
         textSize(14)
         text("press b to go back to main menu",250,690)
+        
+        fill("#d1dede")
+        triangle(165, 670, 187, 590, 211, 670)
+        triangle(190, 670, 215, 590, 236, 670)
+        triangle(215, 670, 242, 590, 261, 670)
+        triangle(240, 670, 270, 590, 286, 670)
+        triangle(265, 670, 295, 590, 315, 670)
+        triangle(290, 670, 323, 590, 340, 670)
 
 #instruction screen
     if screen == 2:
@@ -112,6 +120,21 @@ get through, go around them""", 195,188)
         triangle(65, 350, 87, 270, 111, 350)
         triangle(90, 350, 115, 270, 136, 350)
         triangle(95+20, 350, 120+22, 270, 141+20, 350)
+        
+        text("UP", CENTER+225, 400)
+        text("DOWN", 210, 615)
+        text("LEFT", 50, 550)
+        text("RIGHT", 380, 550)
+        rect(200,415,80,80)
+        rect(200,505,80,80)
+        rect(110,505,80,80)
+        rect(290,505,80,80)
+        fill(35)
+        textSize(50)
+        text("W", 219, 473)
+        text("S", 227, 560)
+        text("A", 133, 560)
+        text("D", 313, 560)
 #Death screen
     if screen == 3:
         background(155)
