@@ -7,28 +7,19 @@ def draw():
     global xCharacter
     global yCharacter
     #MOVEMTN AND KEYS
-    if keys_pressed[119]:
-        yCharacter += 1
-        xCharacter += 1
-    if keys_pressed[97]:
-        yCharacter += 1
-        xCharacter += 1   
-    if keys_pressed[100]:
-        yCharacter +=1
-        xCharacter +=1
-    if keys_pressed[115]:
-        yCharacter += 1
-        xCharacter += 1
+    if keys_pressed[38]:
+        yCharacter -= 3
+        xCharacter -= 3
+    if keys_pressed[37]:
+        yCharacter += 3
+        xCharacter -= 3
+    if keys_pressed[40]:
+        yCharacter +=3
+        xCharacter +=3
+    if keys_pressed[39]:
+        yCharacter -= 3
+        xCharacter += 3
     
-    
-    def keyPressed():
-        global keys_pressed
-        print(keyCode)
-        keys_pressed[keyCode] = True
-    
-    def keyReleased():
-        global keys_pressed
-        keys_pressed[keycode] = False
     
     #ORIGINAL BACKGROUND
     
@@ -47,10 +38,6 @@ def draw():
     fill("#FF8103")
     rect(xCharacter + 250.43,yCharacter + 350.95,60,13)
     
-    
-    
-    
-#DEAD
     noStroke()
     fill(255,0,0)
     ellipse(xCharacter + 470,yCharacter + 350,80,80)
@@ -62,4 +49,16 @@ def draw():
    
     fill("#FF8103")
     rect(xCharacter + 470.43,yCharacter + 350.95,60,13)
+
+    
+def keyPressed():
+    global keys_pressed
+    print(keyCode)
+    keys_pressed[keyCode] = True
+    
+def keyReleased():
+    global keys_pressed
+    keys_pressed[keyCode] = False
+
+
     
