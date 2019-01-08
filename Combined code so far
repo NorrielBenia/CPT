@@ -82,6 +82,19 @@ def draw():
         textSize(24)
         text("How to Play", 182,535)
         
+        #Title
+        fill('#c7003c')
+        rect(00, 20, 200, 20)
+        rect(300, 20, 200, 20)
+        rect(400, 100, 300, 20)
+        rect(00, 100, 300, 20)
+        rect(00, 200, 200, 20)
+        rect(300, 200, 200, 20)
+        
+        fill(255)
+        textSize(50)
+        text("Slidey The SnowMan", 0, 170)
+        
     if screen == 1:
         background(0)
         fill(155)
