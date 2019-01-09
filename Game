@@ -17,6 +17,12 @@ button_x3 = 125
 button_y3 = 300
 button_width3 = 250
 button_length3 = 100
+
+
+xCharacter = 0
+yCharacter = 0
+keys_pressed = [False for key_code in range(256)]
+
 def setup():
     size(500,700)
 
@@ -33,6 +39,7 @@ def mouseClicked():
         
 def keyPressed():
     global screen
+    global keys_pressed
     if screen == 1:
         if key == 'b':
             screen = 0
@@ -46,6 +53,12 @@ def keyPressed():
             screen = 1
         elif key == 'b':
             screen = 0
+    
+    keys_pressed[keyCode] = True
+
+def keyReleased():
+    global keys_pressed
+    keys_pressed[keyCode] = False
 
 def draw():
     global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3
@@ -102,12 +115,44 @@ def draw():
         text("press b to go back to main menu",250,690)
         
         fill("#d1dede")
-        triangle(165, 670, 187, 590, 211, 670)
-        triangle(190, 670, 215, 590, 236, 670)
-        triangle(215, 670, 242, 590, 261, 670)
-        triangle(240, 670, 270, 590, 286, 670)
-        triangle(265, 670, 295, 590, 315, 670)
-        triangle(290, 670, 323, 590, 340, 670)
+        triangle(xCharacter + 165, 670, xCharacter + 187, 590, xCharacter + 211, 670)
+        triangle(xCharacter + 190, 670, xCharacter + 215, 590, xCharacter + 236, 670)
+        triangle(xCharacter + 215, 670, xCharacter + 242, 590, xCharacter + 261, 670)
+        triangle(xCharacter + 240, 670, xCharacter + 270, 590, xCharacter + 286, 670)
+        triangle(xCharacter + 265, 670, xCharacter + 295, 590, xCharacter + 315, 670)
+        triangle(xCharacter + 290, 670, xCharacter + 323, 590, xCharacter + 340, 670)
+        
+        global xCharacter
+        global yCharacter
+        #MOVEMTN AND KEYS
+        if keys_pressed[38]:
+            yCharacter -= 3
+        if keys_pressed[37]:
+            xCharacter -= 3
+        if keys_pressed[40]:
+            yCharacter +=3
+        if keys_pressed[39]:
+            xCharacter += 3
+            
+        if yCharacter == 210:
+            screen = 3
+            yCharacter = 0
+        
+        #BODY
+        noStroke()
+        fill(255)
+        ellipse(xCharacter + 250,yCharacter + 350,80,80)
+    
+    #FEATURES
+        fill(0)
+        ellipse(xCharacter + 230.58,yCharacter + 340.1,20,20)
+        ellipse(xCharacter + 270.25,yCharacter + 340.1,20,20)
+   
+        fill("#FF8103")
+        rect(xCharacter + 250.43,yCharacter + 350.95,60,13)
+        
+        print(yCharacter)
+    
 
 #instruction screen
     if screen == 2:
