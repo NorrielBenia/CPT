@@ -42,6 +42,8 @@ def keyPressed():
     global keys_pressed
     if screen == 1:
         if key == 'b':
+            xCharacter = 0
+            yCharacter = 0
             screen = 0
         if key == 't':
             screen = 3
@@ -108,6 +110,7 @@ def draw():
         textSize(50)
         text("Slidey The SnowMan", 0, 170)
         
+    #Play screen    
     if screen == 1:
         background(0)
         fill(155)
@@ -126,17 +129,22 @@ def draw():
         global yCharacter
         #MOVEMTN AND KEYS
         if keys_pressed[38]:
-            yCharacter -= 3
+            yCharacter -= 4
         if keys_pressed[37]:
-            xCharacter -= 3
+            xCharacter -= 4
         if keys_pressed[40]:
-            yCharacter +=3
+            yCharacter +=4
         if keys_pressed[39]:
-            xCharacter += 3
+            xCharacter += 4
             
-        if yCharacter == 210:
+        if yCharacter == 208:
             screen = 3
             yCharacter = 0
+            
+        if xCharacter == -336:
+            xCharacter = 332
+        elif xCharacter == 336:
+            xCharacter = -332
         
         #BODY
         noStroke()
@@ -152,7 +160,6 @@ def draw():
         rect(xCharacter + 250.43,yCharacter + 350.95,60,13)
         
         print(yCharacter)
-    
 
 #instruction screen
     if screen == 2:
@@ -179,6 +186,7 @@ get through, go around them""", 195,188)
         triangle(90, 350, 115, 270, 136, 350)
         triangle(95+20, 350, 120+22, 270, 141+20, 350)
         
+        #movement keys
         text("UP", CENTER+225, 400)
         text("DOWN", 210, 615)
         text("LEFT", 50, 550)
@@ -187,12 +195,13 @@ get through, go around them""", 195,188)
         rect(200,505,80,80)
         rect(110,505,80,80)
         rect(290,505,80,80)
-        fill(35)
-        textSize(50)
-        text("W", 219, 473)
-        text("S", 227, 560)
-        text("A", 133, 560)
-        text("D", 313, 560)
+        fill(100)
+        
+        triangle(213, 486, 241, 430, 269, 486)
+        triangle(213, 515, 241, 571, 269, 515)
+        triangle(121, 540, 177, 571, 177, 515)
+        triangle(357, 540, 301, 571, 301, 515)
+        
 #Death screen
     if screen == 3:
         background(155)
@@ -215,3 +224,4 @@ get through, go around them""", 195,188)
    
         fill("#FF8103")
         rect(260.43, 390.95, 160, 35)
+        
