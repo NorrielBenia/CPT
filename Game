@@ -1,3 +1,4 @@
+import random
 screen = 0
 
 button_normal = 255
@@ -18,11 +19,12 @@ button_y3 = 300
 button_width3 = 250
 button_length3 = 100
 
+wall_x = random.randint(0, 501)
+wall_down = -55
 
 xCharacter = 0
 yCharacter = 0
 keys_pressed = [False for key_code in range(256)]
-
 def setup():
     size(500,700)
 
@@ -63,7 +65,8 @@ def keyReleased():
     keys_pressed[keyCode] = False
 
 def draw():
-    global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3
+    
+    global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3, wall_down
     
     if screen == 0:
         background(0)
@@ -151,7 +154,7 @@ def draw():
         fill(255)
         ellipse(xCharacter + 250,yCharacter + 350,80,80)
     
-    #FEATURES
+        #FEATURES
         fill(0)
         ellipse(xCharacter + 230.58,yCharacter + 340.1,20,20)
         ellipse(xCharacter + 270.25,yCharacter + 340.1,20,20)
@@ -159,6 +162,11 @@ def draw():
         fill("#FF8103")
         rect(xCharacter + 250.43,yCharacter + 350.95,60,13)
         
+    #Wall
+        fill("#c7003c")
+        rect(wall_x, wall_down, 50, 50)
+        wall_down += 2
+    
         print(yCharacter)
 
 #instruction screen
@@ -224,4 +232,3 @@ get through, go around them""", 195,188)
    
         fill("#FF8103")
         rect(260.43, 390.95, 160, 35)
-        
