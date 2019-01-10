@@ -1,0 +1,29 @@
+page = 0
+xpause = 
+ypause = 
+xpauseend = 
+ypauseend = 
+def setup():
+    size(500,700)
+def draw():
+    background(0)
+    if page == 0:
+        fill(255)
+        ellipse(470,30,50,50)
+        fill(0)
+        rect(459,13,7,35)
+        rect(475,13,7,35)
+    
+    elif page == 1:
+        fill(255)
+def mousePressed():
+    global page
+    page += 1
+    if page == 1:
+        page = 0
+def mouseClicked():
+    global xpause, xpauseend
+    global ypause, ypauseend
+    if (mouseX > xpause and mouseX < xpauseend and
+        mouseY > ypause and mouseY < ypauseend):
+        page = 1
