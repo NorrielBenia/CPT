@@ -19,7 +19,9 @@ def draw():
         background(255)
         textSize(50)
         text("PAUSED",160,370)
-
+        textSize(14)
+        text("press h to resume", 270,670)
+        
 def mouseClicked():
     global  button_x4, button_y4, button_width4, button_length4, screen
     if (mouseX > button_x4 and mouseX < button_x4 + button_width4 and
@@ -31,3 +33,4 @@ def keyPressed():
     if screen == 4:
         if key == 'h':
             screen = 1
+            
