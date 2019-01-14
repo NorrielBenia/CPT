@@ -185,13 +185,13 @@ def Play_screen():
     rect(wall_x - 600, wall_down, 500, 20)
     rect(wall_x, wall_down2, 500, 20)
     rect(wall_x - 600, wall_down2, 500, 20)    
-    if wall_down >= 1110:
-        wall_down = -55
-    if wall_down2 >= 710:
-        wall_down2 = -355
+    if wall_down >= 700:
+        wall_down = 0
+    if wall_down2 >= 700:
+        wall_down2 = 0
     
-    wall_down += 4
-    wall_down2 += 4
+    wall_down += 7
+    wall_down2 += 7
             
 
         
