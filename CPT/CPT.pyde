@@ -24,9 +24,10 @@ button_y4 = 5
 button_width4 = 40
 button_length4 = 50
 
-wall_x = random.randint(0, 501)
+wall_x = random.randint(100, 601,)
+wall_x2 = random.randint(100, 601, )
 wall_down = -55
-wall_down2 = -455
+wall_down2 = -375
 
 xCharacter = 0
 yCharacter = 0
@@ -130,7 +131,7 @@ def main_screen():
         
         
 def Play_screen():
-    global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3, wall_down, wall_down2
+    global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3, wall_x, wall_x2, wall_down, wall_down2
 
     background(0)
     fill(155)
@@ -149,22 +150,22 @@ def Play_screen():
     global yCharacter
     #MOVEMTN AND KEYS
     if keys_pressed[38]:
-        yCharacter -= 4
+        yCharacter -= 7.5
     if keys_pressed[37]:
-        xCharacter -= 4
+        xCharacter -= 7.5
     if keys_pressed[40]:
-        yCharacter +=4
+        yCharacter += 7.5
     if keys_pressed[39]:
-        xCharacter += 4
+        xCharacter += 7.5
             
-    if yCharacter == 208:
+    if yCharacter >= 208:
         screen = 3
         yCharacter = 0
             
-    if xCharacter == -336:
-        xCharacter = 332
-    elif xCharacter == 336:
-        xCharacter = -332
+    if xCharacter <= -296:
+        xCharacter = 295
+    elif xCharacter >= 294:
+        xCharacter = -295
         
     #BODY
     noStroke()
@@ -178,17 +179,20 @@ def Play_screen():
    
     fill("#FF8103")
     rect(xCharacter + 250.43,yCharacter + 350.95,60,13)
+    
         
     #Wall
     fill("#c7003c")
     rect(wall_x, wall_down, 500, 20)
     rect(wall_x - 600, wall_down, 500, 20)
-    rect(wall_x, wall_down2, 500, 20)
-    rect(wall_x - 600, wall_down2, 500, 20)    
+    rect(wall_x2, wall_down2, 500, 20)
+    rect(wall_x2 - 600, wall_down2, 500, 20)    
     if wall_down >= 700:
         wall_down = 0
+        wall_x = random.randint(0, 501)
     if wall_down2 >= 700:
         wall_down2 = 0
+        wall_x2 = random.randint(0, 501)
     
     wall_down += 7
     wall_down2 += 7
@@ -248,7 +252,7 @@ def Death_screen():
     fill(0)
     textSize(85)
     text("""           Game Over
-        You Died""", -267, 145)
+            You Died""", -267, 145)
     textSize(20)
     text("press b to go back to main menu",CENTER+93,650)
     text("press r to play again", CENTER+155, 680)
