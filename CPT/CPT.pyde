@@ -24,10 +24,12 @@ button_y4 = 5
 button_width4 = 40
 button_length4 = 50
 
-wall_x = random.randint(100, 601,)
-wall_x2 = random.randint(100, 601, )
+wall_x = random.randint(100, 501)
+wall_x2 = random.randint(100, 501)
 wall_down = -55
 wall_down2 = -375
+
+score = 0
 
 xCharacter = 0
 yCharacter = 0
@@ -131,7 +133,7 @@ def main_screen():
         
         
 def Play_screen():
-    global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3, wall_x, wall_x2, wall_down, wall_down2
+    global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3, wall_x, wall_x2, wall_down, wall_down2, score, xCharacter, yCharacter
 
     background(0)
     fill(155)
@@ -146,8 +148,6 @@ def Play_screen():
     triangle(xCharacter + 265, 670, xCharacter + 295, 590, xCharacter + 315, 670)
     triangle(xCharacter + 290, 670, xCharacter + 323, 590, xCharacter + 340, 670)
         
-    global xCharacter
-    global yCharacter
     #MOVEMTN AND KEYS
     if keys_pressed[38]:
         yCharacter -= 7.5
@@ -161,7 +161,11 @@ def Play_screen():
     if yCharacter >= 208:
         screen = 3
         yCharacter = 0
-            
+        xCharacter = 0
+        wall_down = -55
+        wall_down2 = -375
+        score = 0
+        
     if xCharacter <= -296:
         xCharacter = 295
     elif xCharacter >= 294:
@@ -189,10 +193,10 @@ def Play_screen():
     rect(wall_x2 - 600, wall_down2, 500, 20)    
     if wall_down >= 700:
         wall_down = 0
-        wall_x = random.randint(0, 501)
+        wall_x = random.randint(100, 501)
     if wall_down2 >= 700:
         wall_down2 = 0
-        wall_x2 = random.randint(0, 501)
+        wall_x2 = random.randint(100, 501)
     
     wall_down += 7
     wall_down2 += 7
@@ -205,7 +209,12 @@ def Play_screen():
     fill(0)
     rect(459,13,7,35)
     rect(475,13,7,35)
-
+    
+    #score
+    score += 1
+    fill(140, 225, 80)
+    textSize(40)
+    text(score, 0, 50)
 def instruction_screen():
     global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3, wall_down
     background(0)
