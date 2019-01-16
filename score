@@ -1,0 +1,6 @@
+score = 0
+global score
+    score += 1 
+    fill(140,225,80)
+    textSize(40)
+    text(score, 0,50)
