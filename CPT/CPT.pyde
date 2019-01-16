@@ -150,13 +150,13 @@ def Play_screen():
         
     #MOVEMTN AND KEYS
     if keys_pressed[38]:
-        yCharacter -= 7.5
+        yCharacter -= 4
     if keys_pressed[37]:
-        xCharacter -= 7.5
+        xCharacter -= 10
     if keys_pressed[40]:
         yCharacter += 7.5
     if keys_pressed[39]:
-        xCharacter += 7.5
+        xCharacter += 10
             
     if yCharacter >= 208:
         screen = 3
