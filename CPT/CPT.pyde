@@ -246,8 +246,8 @@ def instruction_screen():
     textSize(20)
     text(""" These are walls, if the touch
      your carrot you will die""", 195,188)
-    text("""These are spikes. They go up 
-    and continuoesly go faster. If 
+    text("""These are spikes. They follow 
+          your every move. If 
       touched, you will ... DIE""", 195,290)
     noStroke()
     fill("#d1dede")
