@@ -175,7 +175,7 @@ def Play_screen():
     elif xCharacter >= 294:
         xCharacter = -295
         
-    #BODY
+    #BODYr
     body = yCharacter + 350
     noStroke()
     fill(255)
@@ -208,13 +208,13 @@ def Play_screen():
     wall_y += 3
     wall_y2 += 3
         
-    if (body > wall_y and body <= wall_y + wall_thickness) and xCharacter + 40 >= wall_x1 - 250:
+    if (body > wall_y and body <= wall_y + wall_thickness) and xCharacter + 60 >= wall_x1 - 250:
         yCharacter = 1000
-    elif (body > wall_y and body <= wall_y + wall_thickness) and xCharacter - 40 <= wall_x2 + 250:
+    elif (body > wall_y and body <= wall_y + wall_thickness) and xCharacter + 20 <= wall_x2 + 250:
         yCharacter = 1000
-    elif (body > wall_y2 and body <= wall_y2 + wall_thickness) and xCharacter - 40 <= wall_x3 + 250:
+    elif (body > wall_y2 and body <= wall_y2 + wall_thickness) and xCharacter + 60 >= wall_x3 - 250:
         yCharacter = 1000
-    elif (body > wall_y2 and body <= wall_y2 + wall_thickness) and xCharacter - 40 <= wall_x4 + 250:
+    elif (body > wall_y2 and body <= wall_y2 + wall_thickness) and xCharacter + 20 <= wall_x4 + 250:
         yCharacter = 1000
     #pause
     fill(255)
@@ -239,15 +239,15 @@ def instruction_screen():
     textSize(40)
     text("How to Play", CENTER + 135, 45)
     textSize(30)
-    text("JUST SURVIVE", CENTER + 150, 110)
+    text("PROTECT HIS CARROT", CENTER + 90, 110)
     fill("#c7003c")
     rect(50,185,125,20)
     fill(155)
     textSize(20)
-    text(""" These are walls you need to
-get through, go around them""", 195,188)
-    text(""" These are spikes. They go up 
- and continuoesly go faster. If 
+    text(""" These are walls, if the touch
+     your carrot you will die""", 195,188)
+    text("""These are spikes. They go up 
+    and continuoesly go faster. If 
       touched, you will ... DIE""", 195,290)
     noStroke()
     fill("#d1dede")
