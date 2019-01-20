@@ -24,10 +24,14 @@ button_y4 = 5
 button_width4 = 40
 button_length4 = 50
 
-wall_x = random.randint(100, 501)
-wall_x2 = random.randint(100, 501)
-wall_down = -55
-wall_down2 = -375
+wall_x1 = random.randint(100, 501)
+wall_x2 = wall_x1 - 600
+wall_x3 = random.randint(100, 501)
+wall_x4 = wall_x3 - 600
+wall_length = 500
+wall_thickness = 20
+wall_y = -55
+wall_y2 = -375
 
 score = 0
 
@@ -133,7 +137,7 @@ def main_screen():
         
         
 def Play_screen():
-    global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, screen, button_x3, button_y3, button_width3, button_length3, wall_x, wall_x2, wall_down, wall_down2, score, xCharacter, yCharacter
+    global button_hover, button_x1, button_y1, button_width1, button_length1, button_x2, button_y2, button_width2, button_length2, button_x3, button_y3, button_width3, button_length3, screen, wall_x1, wall_x2, wall_x3, wall_x4, wall_y, wall_y2, score, xCharacter, yCharacter, wall_length, wall_thickness
 
     background(0)
     fill(155)
@@ -162,8 +166,8 @@ def Play_screen():
         screen = 3
         yCharacter = 0
         xCharacter = 0
-        wall_down = -55
-        wall_down2 = -375
+        wall_y = -55
+        wall_y2 = -375
         score = 0
         
     if xCharacter <= -296:
@@ -172,9 +176,10 @@ def Play_screen():
         xCharacter = -295
         
     #BODY
+    body = yCharacter + 350
     noStroke()
     fill(255)
-    ellipse(xCharacter + 250,yCharacter + 350,80,80)
+    ellipse(xCharacter + 250, body ,80,80)
     
     #FEATURES
     fill(0)
@@ -187,28 +192,38 @@ def Play_screen():
         
     #Wall
     fill("#c7003c")
-    rect(wall_x, wall_down, 500, 20)
-    rect(wall_x - 600, wall_down, 500, 20)
-    rect(wall_x2, wall_down2, 500, 20)
-    rect(wall_x2 - 600, wall_down2, 500, 20)    
-    if wall_down >= 700:
-        wall_down = 0
-        wall_x = random.randint(100, 501)
-    if wall_down2 >= 700:
-        wall_down2 = 0
-        wall_x2 = random.randint(100, 501)
+    rect(wall_x1, wall_y, wall_length, wall_thickness)
+    rect(wall_x2, wall_y, wall_length, wall_thickness)
+    rect(wall_x3, wall_y2, wall_length, wall_thickness)
+    rect(wall_x4, wall_y2, wall_length, wall_thickness)    
+    if wall_y >= 700:
+        wall_y = 0
+        wall_x1 = random.randint(100, 501)
+        wall_x2 = wall_x1 - 600
+    if wall_y2 >= 700:
+        wall_y2 = 0
+        wall_x3 = random.randint(100, 501)
+        wall_x4 = wall_x3 - 600
     
-    wall_down += 7
-    wall_down2 += 7
-            
-
+    wall_y += 3
+    wall_y2 += 3
         
+    if (body > wall_y and body <= wall_y + wall_thickness) and xCharacter + 40 >= wall_x1 - 250:
+        yCharacter = 1000
+    elif (body > wall_y and body <= wall_y + wall_thickness) and xCharacter - 40 <= wall_x2 + 250:
+        yCharacter = 1000
+    elif (body > wall_y2 and body <= wall_y2 + wall_thickness) and xCharacter - 40 <= wall_x3 + 250:
+        yCharacter = 1000
+    elif (body > wall_y2 and body <= wall_y2 + wall_thickness) and xCharacter - 40 <= wall_x4 + 250:
+        yCharacter = 1000
     #pause
     fill(255)
     rect(button_x4, button_y4, button_width4, button_length4)
     fill(0)
     rect(459,13,7,35)
     rect(475,13,7,35)
+    
+    print(body)
     
     #score
     score += 1
