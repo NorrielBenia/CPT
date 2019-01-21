@@ -1,5 +1,4 @@
-def setup():
-    size(500,700)
+
 def keyPressed():
     global screen
     if screen == 1 or screen == 2:
