@@ -1,5 +1,7 @@
 def Death_screen():
     background(155)
+    
+    # Written Component
     fill(0)
     textSize(85)
     text("""           Game Over
@@ -8,6 +10,7 @@ def Death_screen():
     text("press b to go back to main menu", CENTER + 93, 650)
     text("press r to play again", CENTER + 155, 680)
 
+    # Body
     noStroke()
     fill(255, 0, 0)
     ellipse(260, 450, 250, 250)
