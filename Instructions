@@ -18,12 +18,10 @@ def instruction_screen():
     text("""These are spikes. They follow
           your every move. If
       touched, you will ... DIE""", 195, 290)
-    noStroke()
-    fill("#d1dede")
-    triangle(65, 350, 87, 270, 111, 350)
-    triangle(90, 350, 115, 270, 136, 350)
-    triangle(95+20, 350, 120+22, 270, 141+20, 350)
-
+      
+    # Wall
+    rect(50, 185, 125, 20)
+     
     # movement keys
     text("UP", CENTER+225, 400)
     text("DOWN", 210, 615)
@@ -34,9 +32,15 @@ def instruction_screen():
     rect(110, 505, 80, 80)
     rect(290, 505, 80, 80)
     fill(100)
-    
-    # Spikes
+    noStroke()
+    fill("#d1dede")
     triangle(213, 486, 241, 430, 269, 486)
     triangle(213, 515, 241, 571, 269, 515)
     triangle(121, 540, 177, 571, 177, 515)
     triangle(357, 540, 301, 571, 301, 515)
+    
+    # Spikes
+    triangle(65, 350, 87, 270, 111, 350)
+    triangle(90, 350, 115, 270, 136, 350)
+    triangle(95+20, 350, 120+22, 270, 141+20, 350)
+    
