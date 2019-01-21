@@ -1,10 +1,38 @@
-fill("#c7003c")
-rect(wall_x, wall_down, 370, 20)
-rect(wall_x - 600, wall_down, 500, 20)
-rect(wall_x, wall_down - 150, 370, 20)
-rect(wall_x - 600, wall_down - 150, 500, 20)
-        
-if wall_down >= 710:
-    wall_down = -55
-            
-wall_down += 2
+wall_x1 = random.randint(100, 501)
+wall_x2 = wall_x1 - 600
+wall_x3 = random.randint(100, 501)
+wall_x4 = wall_x3 - 600
+wall_length = 500
+wall_thickness = 20
+wall_y = -55
+wall_y2 = -375
+
+    fill("#c7003c")
+    rect(wall_x1, wall_y, wall_length, wall_thickness)
+    rect(wall_x2, wall_y, wall_length, wall_thickness)
+    rect(wall_x3, wall_y2, wall_length, wall_thickness)
+    rect(wall_x4, wall_y2, wall_length, wall_thickness)
+    if wall_y >= 700:
+        wall_y = 0
+        wall_x1 = random.randint(100, 501)
+        wall_x2 = wall_x1 - 600
+    if wall_y2 >= 700:
+        wall_y2 = 0
+        wall_x3 = random.randint(100, 501)
+        wall_x4 = wall_x3 - 600
+
+    wall_y += 3
+    wall_y2 += 3
+
+    if (body > wall_y and body <= wall_y + wall_thickness and
+    xCharacter + 60 >= wall_x1 - 250):
+            yCharacter = 1000
+    elif (body > wall_y and body <= wall_y + wall_thickness and
+    xCharacter + 20 <= wall_x2 + 250):
+            yCharacter = 1000
+    elif (body > wall_y2 and body <= wall_y2 + wall_thickness and
+    xCharacter + 60 >= wall_x3 - 250):
+            yCharacter = 1000
+    elif (body > wall_y2 and body <= wall_y2 + wall_thickness and
+    xCharacter + 20 <= wall_x4 + 250):
+            yCharacter = 1000
