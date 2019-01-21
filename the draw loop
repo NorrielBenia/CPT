@@ -1,0 +1,13 @@
+def draw():
+    global screen
+
+    if screen == 0:
+        main_screen()
+    elif screen == 1:
+        Play_screen()
+    elif screen == 2:
+        instruction_screen()
+    elif screen == 3:
+        Death_screen()
+    elif screen == 4:
+        pause_screen()
