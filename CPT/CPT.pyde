@@ -256,10 +256,6 @@ def Play_screen():
 
 
 def instruction_screen():
-
-    global button_hover, button_x1, button_y1, button_width1, button_length1
-    global button_x2, button_y2, button_width2, button_length2, screen
-    global button_x3, button_y3, button_width3, button_length3, wall_down
     background(0)
     fill(155)
     textSize(14)
