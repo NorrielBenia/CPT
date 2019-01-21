@@ -46,12 +46,12 @@ def setup():
 
 def mouseClicked():
 
-    # For play button
     global button_x1, button_y1, button_width1
     global button_length1, button_x2, button_y2, button_width2, button_length2
     global screen, button_x3, button_y3, button_width3, button_length3
     global button_x4, button_y4, button_width4, button_length4, screen
 
+    # For play button
     if (mouseX > button_x1 and mouseX < button_x1+button_width1 and
         mouseY > button_y1 and mouseY < button_y1+button_length1):
         screen = 1
@@ -60,6 +60,7 @@ def mouseClicked():
     elif (mouseX > button_x2 and mouseX < button_x2+button_width2 and
           mouseY > button_y2 and mouseY < button_y2+button_length2):
         screen = 2
+
     # For Pause button
     if (mouseX > button_x4 and mouseX < button_x4 + button_width4 and
         mouseY > button_y4 and mouseY < button_y4 + button_length4):
