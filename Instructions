@@ -1,0 +1,39 @@
+def instruction_screen():
+    background(0)
+    fill(155)
+    textSize(14)
+    text("press b to go back to main menu", 250, 690)
+    textSize(40)
+    text("How to Play", CENTER + 135, 45)
+    textSize(30)
+    text("PROTECT HIS CARROT", CENTER + 90, 110)
+    fill("#c7003c")
+    rect(50, 185, 125, 20)
+    fill(155)
+    textSize(20)
+    text(""" These are walls, if the touch
+     your carrot you will die""", 195, 188)
+    text("""These are spikes. They follow
+          your every move. If
+      touched, you will ... DIE""", 195, 290)
+    noStroke()
+    fill("#d1dede")
+    triangle(65, 350, 87, 270, 111, 350)
+    triangle(90, 350, 115, 270, 136, 350)
+    triangle(95+20, 350, 120+22, 270, 141+20, 350)
+
+    # movement keys
+    text("UP", CENTER+225, 400)
+    text("DOWN", 210, 615)
+    text("LEFT", 50, 550)
+    text("RIGHT", 380, 550)
+    rect(200, 415, 80, 80)
+    rect(200, 505, 80, 80)
+    rect(110, 505, 80, 80)
+    rect(290, 505, 80, 80)
+    fill(100)
+
+    triangle(213, 486, 241, 430, 269, 486)
+    triangle(213, 515, 241, 571, 269, 515)
+    triangle(121, 540, 177, 571, 177, 515)
+    triangle(357, 540, 301, 571, 301, 515)
