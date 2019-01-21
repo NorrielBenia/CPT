@@ -156,7 +156,8 @@ def Play_screen():
     fill(155)
     textSize(14)
     text("press b to go back to main menu", 250, 690)
-
+    
+    # Spikes
     fill("#d1dede")
     triangle(xCharacter + 165, 670, xCharacter + 187, 590, xCharacter + 211,
              670)
