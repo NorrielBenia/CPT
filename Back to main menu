@@ -1,4 +1,3 @@
-
 def keyPressed():
     global screen
     if screen == 1 or screen == 2:
