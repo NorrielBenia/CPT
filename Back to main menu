@@ -5,16 +5,7 @@ def keyPressed():
     if screen == 1 or screen == 2:
         if key == 'b':
             screen = 0
-    if screen == 1:
-        background(0)
-        fill(155)
-        textSize(14)
-        text("press b to go back to main menu",250,690)
-    if screen == 2:
-        background(0)
-        fill(155)
-        textSize(14)
-        text("press b to go back to main menu",250,690)
+
 def draw():
   if screen == 1:
         background(0)
